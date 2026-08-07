@@ -36,5 +36,27 @@ def obter_nota(nota_id):
             return jsonify(nota)
     return jsonify({"erro": "Nota não encontrada"}), 404
 
+@app.route("/notas/<int:nota_id>", methods=["PUT"])
+def editar_nota(nota_id):
+    dados = request.get_json()
+
+    for nota in notas:
+        if nota["id"] == nota_id:
+            nota["titulo"] = dados.get("titulo", nota["titulo"])        #O segundo argumento do .get() é o valor padrão caso a chave não exista.
+            nota["conteudo"] = dados.get("conteudo", nota["conteudo"])
+            return jsonify(nota)
+
+    return jsonify({"erro": "Nota não encontrada"}), 404
+
+@app.route("/notas/<int:nota_id>", methods=["DELETE"])
+def excluir_nota(nota_id):
+    for nota in notas:
+        if nota["id"] == nota_id:
+            notas.remove(nota)          #remove esse item especifico da lista.
+            return jsonify({"mensagem": "Nota excluída com sucesso"})
+
+    return jsonify({"erro": "Nota não encontrada"}), 404
+
+
 if __name__ == "__main__":
     app.run(debug=True)         #Reinicia o servidor sozinho a cada mudança no código e mostra erros detalhados no navegador.
