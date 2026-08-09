@@ -3,15 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mimi-Notion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>mini-Notion</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Bloco de anotações</h1>
+    
+    <header>
+        <span class="logotipo">mini-Notion</span>
+        <nav class="nav-links">
+            <ul>
+                <li>Bloco de notas</li>
+                <li>Equipe</li>
+                <!-- <li><a href="#">Equipe</a></li> -->
+            </ul>
+        </nav>
+        <a href="#"><button class="button-equipe">futuro login</button></a>
+    </header>
 
+    <!-- <div>
+        <h1 id="titulo">Faça as suas anotações aqui</h1>
+    </div> -->
 
-    <script src="{{ url_for('static', filename='script.js') }}">
-
-    </script>
+    <form id="nota-form">
+        <div>
+            <label for="titulo">Título</label>
+            <input type="text" id="titulo" name="titulo" required>
+        </div>
+        <div>
+            <label for="conteudo">Conteúdo</label>
+            <textarea id="conteudo" name="conteudo" required></textarea>
+        </div>
+        
+        <button type="submit">Adicionar nota</button>
+    </form>
+    
+ <script src="script.js"></script>
 </body>
 </html>

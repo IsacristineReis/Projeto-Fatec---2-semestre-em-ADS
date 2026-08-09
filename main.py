@@ -1,6 +1,7 @@
-from flask import Flask, request, jsonify           #request deixa ler o que o frontend envia quando o usuário faaz um post ou put
+from flask import Flask, request, jsonify, render_template           #request deixa ler o que o frontend envia quando o usuário faaz um post ou put
                                                     #jsonify transfora dicionario/lista em json de verdade na resposta HTTP
 app = Flask(__name__)
+app.secret_key = '1234'
 
 notas = []              #Está fazendo o papel do banco de dados por enquanto
 proximo_id = 1          #Contador manual enquanto estamos sem o banco de dados

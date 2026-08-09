@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Paleta de corer
+Background = EEEEEE
+details = B8C3C8
+text = 252525
+opção = 9B897D
+opção 2 = 7B6F67
+*/
+
+/* Corpo do site */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #EEEEEE;
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+/* Cabeçalho do site */
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: #B8C3C8;
+}
+
+header, li, a, button{
+    font-size: 18px;
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
+.button-equipe{
+    background-color: #9B897D;
+    border: none;
+    border-radius: 60px;
+    padding: 6px 20px;
+    cursor: pointer;
+}
+
+.button-equipe:hover{
+    
+    padding: 7px 21px;
+}
+
+.logotipo{
+    color: #9B897D;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.nav-links{
+    list-style: none;
+}
+
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+/* titulo */
+#titulo{
+    color: #7B6F67;
+    align-items: center;
+}
+
+#nota-form{
+    margin: 0;
+    width: 400px;
+    padding: 1em;
+    border: 1px solid #7B6F67;
+    border-radius: 1em;
+}
+
