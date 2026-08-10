@@ -1,83 +1,285 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
-/* Paleta de corer
-Background = EEEEEE
-details = B8C3C8
-text = 252525
-opção = 9B897D
-opção 2 = 7B6F67
-*/
-
-/* Corpo do site */
-
-*{
-    margin: 0;
-    padding: 0;
+:root {
+  /* Color Palette */
+  --ink: #323232;
+  --paper-front: #fff9e6;
+  --bg-color: #ffffff;
+  --primary-btn: #ff6b6b;
+  --primary-btn-hover: #ff5252;
+  --switch-bg: #ffe66d;
+  --input-focus: #2d8cf0;
+  /* Basic Colors */
+  --background: #9b897d;
+  --header: #b8c3c8;
+  --text: #252525;
+  --link: #eeeeee;
 }
 
-body{
-    font-family: Arial, sans-serif;
-    background-color: #EEEEEE;
-    /* margin: 0;
-    padding: 0; */
-    box-sizing: border-box;
-    justify-content: center;
+/* Configurações gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", "Gochi Hand";
+  background-color: var(--header);
+  height: 100vh;
+}
+
+/* Cada div terá essa configuração (centraliza na página) */
+.interface {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* ======================================================================== */
 /* Cabeçalho do site */
-header{
+#div-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 22rem;
+  background-color: var(--background);
+  overflow: hidden;
+  border-radius: 8px 24px 8px 24px / 24px 8px 24px 8px;
+}
+.logotipo {
+  color: var(--text);
+  font-size: 35px;
+  font-weight: bold;
+  font-family: "Poppins";
+}
+#login button {
+  font-size: 18px;
+  color: var(--primary-btn-hover);
+  text-decoration: none;
+}
+#login {
+}
+
+/* ======================================================================== */
+/*Bloco de Anotação*/
+/* From Uiverse.io by mamyapro123 */
+.doodle-wrapper {
+  /* Sizing */
+  --card-width: 550px;
+  --card-height: 500px;
+  --titulo-width: 350px;
+  --titulo-height: 40px;
+  --conteudo-width: 400px;
+  --conteudo-height: 100px;
+  --btn-width: 120px;
+  --btn-height: 40px;
+
+  --border-width: 1px;
+  --shadow-offset: 5px;
+
+  /* Doodle Border Radiuses */
+  --sketch-radius-1: 8px 24px 8px 24px / 24px 8px 24px 8px;
+  --sketch-radius-2: 24px 8px 24px 8px / 8px 24px 8px 24px;
+  --sketch-radius-btn: 16px 5px 16px 5px / 5px 16px 5px 16px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 6rem;
+}
+.doodle-switch-label {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+  background-color: var(--switch-bg);
+  border: var(--border-width) solid var(--ink);
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--ink);
+  transition:
+    transform 0.1s,
+    box-shadow 0.1s;
+}
+.doodle-switch-label:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px var(--ink);
+}
+.doodle-switch-handle {
+  position: absolute;
+  top: 2px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  background-color: var(--bg-color);
+  border: var(--border-width) solid var(--ink);
+  border-radius: 50%;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.doodle-toggle:checked
+  ~ .doodle-header
+  .doodle-switch-label
+  .doodle-switch-handle {
+  transform: translateX(24px);
+}
+/* 3D Scene Setup */
+.doodle-card-scene {
+  position: relative;
+  perspective: 1000px;
+  width: var(--card-width);
+  height: var(--card-height);
+  z-index: 2;
+}
+/* Card Inner & Faces */
+.doodle-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+.doodle-card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--sketch-radius-1);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--ink);
+  /* Lined Notebook Paper Effect */
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 28px,
+    rgba(0, 0, 0, 0.06) 28px,
+    rgba(0, 0, 0, 0.06) 30px
+  );
+  background-position: 0 15px;
+}
+.doodle-card-front {
+  background-color: var(--paper-front);
+}
+/* Typography & Forms */
+.doodle-title {
+  font-size: 25px;
+  font-weight: 900;
+  color: var(--ink);
+  margin: 5px 0 40px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+}
+#form-nota {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  align-items: center;
+}
+.doodle-input-wrapper {
+  position: relative;
+}
+/* Inputs */
+#titulo-form {
+  width: var(--titulo-width);
+  height: var(--titulo-height);
+  padding: 5px 15px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  background-color: var(--bg-color);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--sketch-radius-1);
+  box-shadow: 3px 3px 0px var(--ink);
+  outline: none;
+  transition: all 0.2s ease;
+}
+#conteudo-form {
+  width: var(--conteudo-width);
+  height: var(--conteudo-height);
+  padding: 25px 15px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  background-color: var(--bg-color);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--sketch-radius-1);
+  box-shadow: 3px 3px 0px var(--ink);
+  outline: none;
+  transition: all 0.2s ease;
+}
+.doodle-input::placeholder {
+  color: #666;
+  opacity: 0.8;
+}
+.doodle-input:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 0px var(--ink);
+}
+.doodle-input:focus,
+.doodle-input:focus-visible {
+  border: var(--border-width) solid var(--input-focus);
+  border-radius: var(--sketch-radius-2);
+  background-color: #fffdf5;
+  box-shadow: 4px 4px 0px var(--ink);
+}
+/* Buttons */
+.doodle-btn {
+  margin: 15px 0;
+  width: var(--btn-width);
+  height: var(--btn-height);
+  font-family: inherit;
+  font-size: 17px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: var(--ink);
+  background-color: var(--primary-btn);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--sketch-radius-btn);
+  box-shadow: 4px 4px 0px var(--ink);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  transform: rotate(-1deg);
+}
+/* Button States */
+.doodle-btn:hover {
+  background-color: var(--primary-btn-hover);
+  transform: translateY(-2px) rotate(-2deg);
+  box-shadow: 5px 5px 0px var(--ink);
+}
+.doodle-btn:active {
+  transform: translate(3px, 3px) rotate(0deg);
+  box-shadow: 0px 0px 0px var(--ink);
+}
+
+/* COMEÇAR NO DELETE E UPDATE */
+button.edit-btn { background-color: #ffc107; color: black; margin-right: 5px; }
+button.delete-btn { background-color: #dc3545; }
+li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 15px;
-    background-color: #B8C3C8;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
 }
-
-header, li, a, button{
-    font-size: 18px;
-    color: #EEEEEE;
-    text-decoration: none;
-}
-
-.button-equipe{
-    background-color: #9B897D;
-    border: none;
-    border-radius: 60px;
-    padding: 6px 20px;
-    cursor: pointer;
-}
-
-.button-equipe:hover{
-    
-    padding: 7px 21px;
-}
-
-.logotipo{
-    color: #9B897D;
-    font-size: 40px;
-    font-weight: bold;
-}
-
-.nav-links{
-    list-style: none;
-}
-
-.nav-links li{
-    display: inline-block;
-    padding: 0px 20px;
-}
-
-/* titulo */
-#titulo{
-    color: #7B6F67;
-    align-items: center;
-}
-
-#nota-form{
-    margin: 0;
-    width: 400px;
-    padding: 1em;
-    border: 1px solid #7B6F67;
-    border-radius: 1em;
-}
-

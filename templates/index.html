@@ -1,42 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mini-Notion</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    
-    <header>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="div-header">
+      <header>
         <span class="logotipo">mini-Notion</span>
-        <nav class="nav-links">
-            <ul>
-                <li>Bloco de notas</li>
-                <li>Equipe</li>
-                <!-- <li><a href="#">Equipe</a></li> -->
-            </ul>
-        </nav>
-        <a href="#"><button class="button-equipe">futuro login</button></a>
-    </header>
+        <a href="" id="login"><button>Login</button></a>
+      </header>
+    </div>
 
-    <!-- <div>
-        <h1 id="titulo">Faça as suas anotações aqui</h1>
-    </div> -->
+    <!-- Criar uma anotação {Titulo, Conteúdo, adicionar nota} lista deletar e editar-->
+    <!-- From Uiverse.io by mamyapro123 -->
+    <div class="doodle-wrapper" style="border: 2px solid saddlebrown">
+      <!-- CARD NUMBER 1 -->
+      <div class="doodle-card-scene">
+        <div class="doodle-card-inner">
+          <div class="doodle-card-front">
+            <div class="doodle-title">Bloco de notas</div>
+            <form id="form-nota" action="#" method="post">
+              <div class="doodle-input-wrapper">
+                <input type="hidden" id="nota-id" />
+                <input
+                  class="doodle-input"
+                  id="titulo-form"
+                  name="titulo"
+                  placeholder="Título"
+                  type="text"
+                />
+              </div>
+              <div class="doodle-input-wrapper">
+                <input
+                  class="doodle-input"
+                  id="conteudo-form"
+                  name="conteudo"
+                  placeholder="Conteúdo"
+                  type="text"
+                />
+              </div>
+              <button class="doodle-btn" type="submit">Salvar nota</button>
 
-    <form id="nota-form">
-        <div>
-            <label for="titulo">Título</label>
-            <input type="text" id="titulo" name="titulo" required>
+              <hr />
+
+              <div>
+                <ul id="lista-notas">
+                  <!-- JavaScript irá preencher com <li> -->
+                </ul>
+              </div>
+            </form>
+          </div>
         </div>
-        <div>
-            <label for="conteudo">Conteúdo</label>
-            <textarea id="conteudo" name="conteudo" required></textarea>
-        </div>
-        
-        <button type="submit">Adicionar nota</button>
-    </form>
-    
- <script src="script.js"></script>
-</body>
+      </div>
+    </div>
+    <!-- ==== FIM DO FORMULÀRIO ==== -->
+
+    <footer id="footer">Adeus</footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
