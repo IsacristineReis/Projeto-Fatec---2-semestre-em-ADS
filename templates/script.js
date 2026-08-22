@@ -79,6 +79,9 @@ function renderizarNotas(notas) {
   });
 }
 
+
+// =============  JavaScript do Formulário  ==============/
+
 function preencherFormulario(id, titulo, conteudo) {
   inputId.value = id;
   inputTitulo.value = titulo;
@@ -90,3 +93,12 @@ function limparFormulario() {
   inputTitulo.value = "";
   inputConteudo.value = "";
 }
+
+function temp() {
+  document.getElementById("doodle-btn").innerHTML = "Salvando...";
+  setTimeout(() => {
+    document.getElementById("doodle-btn").innerHTML = "Salvar nota";
+  }, 2000);
+}
+
+// === fomulário de login === /

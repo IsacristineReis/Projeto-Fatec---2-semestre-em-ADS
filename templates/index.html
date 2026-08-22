@@ -8,16 +8,33 @@
   </head>
 
   <body>
+    <!-- Header -->
     <div id="div-header">
       <header>
         <span class="logotipo">mini-Notion</span>
-        <a href="" id="login"><button>Login</button></a>
+        <button
+          id="btnlogin"
+          onclick="
+            document.getElementById('formLogin-Wrapper').style.display = 'block'
+          "
+        >
+          Login
+        </button>
       </header>
+      <div id="formLogin-Wrapper" style="display: none">
+        <div id="title-form-login">Criar Conta</div>
+        <form id="loginForm">
+          <!-- <input type="text" id="username" placeholder="Usuário" /> -->
+          <input type="email" id="email" placeholder="Email" />
+          <input type="password" id="password" placeholder="Senha" />
+          <button type="submit">Criar Conta</button>
+        </form>
+      </div>
     </div>
 
     <!-- Criar uma anotação {Titulo, Conteúdo, adicionar nota} lista deletar e editar-->
     <!-- From Uiverse.io by mamyapro123 -->
-    <div class="doodle-wrapper" style="border: 2px solid saddlebrown">
+    <div class="doodle-wrapper">
       <!-- CARD NUMBER 1 -->
       <div class="doodle-card-scene">
         <div class="doodle-card-inner">
@@ -31,19 +48,22 @@
                   id="titulo-form"
                   name="titulo"
                   placeholder="Título"
+                  onfocus="this.placeholder = 'Título'"
                   type="text"
                 />
               </div>
               <div class="doodle-input-wrapper">
-                <input
+                <textarea
                   class="doodle-input"
                   id="conteudo-form"
                   name="conteudo"
                   placeholder="Conteúdo"
-                  type="text"
-                />
+                  onfocus="this.placeholder = 'Conteúdo'"
+                ></textarea>
               </div>
-              <button class="doodle-btn" type="submit">Salvar nota</button>
+              <button class="doodle-btn" type="submit" onclick="temp()">
+                Salvar nota
+              </button>
 
               <hr />
 
@@ -59,7 +79,10 @@
     </div>
     <!-- ==== FIM DO FORMULÀRIO ==== -->
 
-    <footer id="footer">Adeus</footer>
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; 2026 mini-Notion. Todos os direitos reservados.</p>
+    </footer>
 
     <script src="script.js"></script>
   </body>
