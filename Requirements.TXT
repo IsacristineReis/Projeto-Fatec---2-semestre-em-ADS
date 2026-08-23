@@ -1,0 +1,7 @@
+# Aqui gurada tudo que o app precisa pra funcionar
+Flask==3.0.3 # Isso é um framework básico de criação de api
+Flask-Cors==4.0.1 
+SQLAlchemy==2.0.353 # Biblioteca do python que permite através da ORM (Mapeamento Objeto-RelacionaL) um kit de ferramentas SQL
+#Permitindo a substuição do cursor e de códigos mysql dentro da aplicação.   
+PyMySQL==1.1.1 # Outra biblioteca de de manipulação de bamco de dados mysql 
+python-dotenv==1.0.1 #lê as varivaeis da env porem não permite que deixe os dados expostos
