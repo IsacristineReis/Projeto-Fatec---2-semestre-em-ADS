@@ -1,12 +1,80 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tela de Login</title>
     <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-    
-</body>
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="backgroundImages fhOXIb"
+      style="background-image: url(&quot;./skyBackground.svg&quot;)"
+    ></div>
+    <!-- Header -->
+    <div id="global-header">
+      <div class="headerdiv">
+        <div id="logoNote">
+          <img src="./notas.png" alt="" /><span>mini-Notion</span>
+        </div>
+        <div class="darkLight">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulário de login -->
+    <div class="loginwrapper">
+      <div class="warning">
+        <h1 class="heading">Entre com a sua conta para acessar o bloco de notas</h1>
+      </div>
+      <div class="container">
+        <form class="form" action="" method="post">
+          <div class="input-field">
+            <input
+              required=""
+              autocomplete="off"
+              type="text"
+              name="text"
+              id="username"
+            />
+            <label for="username">Nome</label>
+          </div>
+          <div class="input-field">
+            <input
+              required=""
+              autocomplete="off"
+              type="email"
+              name="email"
+              id="email"
+            />
+            <label for="username">E-mail</label>
+          </div>
+          <div class="input-field">
+            <input
+              required=""
+              autocomplete="off"
+              type="password"
+              name="text"
+              id="password"
+            />
+            <label for="username">Senha</label>
+          </div>
+
+          <div class="btn-container">
+            <a href="index.html">
+                <button class="btn" >Entrar</button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
 </html>

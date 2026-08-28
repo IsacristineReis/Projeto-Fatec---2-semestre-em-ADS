@@ -9,24 +9,36 @@
   --primary-btn-hover: #ff5252;
   --switch-bg: #ffe66d;
   --input-focus: #2d8cf0;
-  /* Basic Colors */
   --background: #9b897d;
   --header: #b8c3c8;
   --text: #252525;
   --link: #eeeeee;
+  --text-color: #1a1a1a;
+  --header-bg: #2d8cf0;
+  --icon-color: #ffffff;
 }
-
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #f0f0f0;
+  --header-bg: #1c1c1c;
+  --icon-color: #f0f0f0;
+}
 /* Configurações gerais */
 * {
   margin: 0;
   padding: 0;
+}
+*,
+::after,
+::before {
   box-sizing: border-box;
 }
-
 body {
   font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", "Gochi Hand";
   background-color: var(--header);
   height: 100vh;
+  transition:
+  background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Cada div terá essa configuração (centraliza na página) */
@@ -35,54 +47,89 @@ body {
   margin: 0 auto;
 }
 
+.fhOXIb {
+  /* background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
 /* ======================================================================== */
 /* Cabeçalho do site */
-#div-header {
-  /* display: flex;
-  flex-direction: column;
+#global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  background-color: var(--header-bg);
+  z-index: 100;
+}
+.headerdiv {
+  position: relative;
+  height: 100%;
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#logoNote {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#logoNote img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+#logoNote span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+/*botões*/
+.darkLight {
+  display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  margin-top: 2rem; */
-  margin-bottom: 5rem;
-  position: relative;
-}
-#div-header header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 10rem;
-  background-color: var(--background);
-  overflow: hidden;
-  gap: 30rem;
-  /* border-radius: 8px 24px 8px 24px / 24px 8px 24px 8px; */
-}
-.logotipo {
-  color: var(--text);
-  font-size: 30px;
-  font-weight: bold;
-  font-family: "Poppins";
-}
-#btnlogin {
-  width: 120px;
+  width: 40px;
   height: 40px;
-  text-decoration: none;
-  color: var(--link);
-  font-size: 15px;
-  background-color: var(--primary-btn);
-  border-radius: 5px;
-  border: 2px solid var(--ink);
-  box-shadow: 4px 4px var(--ink);
+  border-radius: 50%;
   cursor: pointer;
+  transition: background-color 0.2s ease;
 }
-#btnlogin:hover {
-  transform: translateX(2px) rotate(-3deg);
-  box-shadow: 3px 3px var(--ink);
+.darkLight:hover {
+  background-color: rgba(255, 255, 255, 0.15);
 }
-#btnlogin:active {
-  transform: translate(4px, 4px) rotate(0deg);
-  box-shadow: 0px 0px var(--ink);
+.darkLight i {
+  font-size: 1.4rem;
+  color: var(--icon-color);
+}
+/*========*/
+.darkLight .sun {
+  display: none;
+}
+.darkLight .moon {
+  display: block;
+}
+body.dark-mode .darkLight .sun {
+  display: block;
+}
+body.dark-mode .darkLight .moon {
+  display: none;
 }
 
 /* ======================================================================== */
@@ -114,7 +161,7 @@ body {
   position: relative;
   box-sizing: border-box;
   margin-top: 6rem; */
-  margin: 0 auto;
+  margin: 10rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -282,72 +329,121 @@ body {
 }
 
 /* COMEÇAR NO DELETE E UPDATE */
-button.edit-btn { background-color: #ffc107; color: black; margin-right: 5px; }
-button.delete-btn { background-color: #dc3545; }
+button.edit-btn {
+  background-color: #ffc107;
+  color: black;
+  margin-right: 5px;
+}
+button.delete-btn {
+  background-color: #dc3545;
+}
 li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px;
-    border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  border-bottom: 1px solid #eee;
 }
 
 /* ======================================================================== */
 /*Formulário do Login*/
-#formLogin-Wrapper {
-  position: absolute;
-  top: 100%;      /* logo abaixo do header */
-  left: 70%;
-  /* transform: translateX(-50%); */
-  width: 100%;
-  height: auto;
-  max-width: 300px;
-  margin-top: 0.5rem;
-  padding: 1.5rem;
-  background-color: var(--background);
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  box-sizing: border-box;
-  z-index: 10; /* garante que fica por cima do conteúdo abaixo */
 
-  animation: abrirFormulario 0.2s ease-out;
+/* Texto de aviso acima do formulário */
+.loginwrapper {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
-
-@keyframes abrirFormulario {
-  from {
-    opacity: 0;
-    transform: translateY(-25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(10px);
-  }
-}
-#loginForm {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  border: 1px solid black;
-}
-
-#loginForm input {
-  padding: 0.6rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-}
-#title-form-login {
+.warning {
+  max-width: 400px;
   text-align: center;
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
 }
-#loginForm button {
-  padding: 0.6rem;
-  background-color: var(--primary-btn);
-  color: var(--link);
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+
+.warning .heading {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Container do formulário */
+.container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Campos com label flutuante */
+.input-field {
+    position: relative;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 10px;
+    font-size: 1rem;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    background: transparent;
+    color: #1a1a1a;
+    transition: border-color 0.3s ease;
+}
+
+.input-field label {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    font-size: 1rem;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.2s ease;
+}
+
+.input-field input:focus,
+.input-field input:valid {
+    border-bottom-color: #2d8cf0;
+}
+
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+    top: -14px;
+    font-size: 0.75rem;
+    color: #2d8cf0;
+}
+
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #2d8cf0;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #1e6fc9;
 }
 
 /* ======================================================================== */
@@ -365,3 +461,7 @@ li {
 #footer p {
   margin: 0;
 }
+
+/* ===================================================== */
+
+/*========*/

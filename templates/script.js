@@ -102,3 +102,14 @@ function temp() {
 }
 
 // === fomulário de login === /
+
+
+
+
+
+// === Botão dark e light ===
+const darkLightBtn = document.querySelector('.darkLight');
+
+darkLightBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});

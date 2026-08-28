@@ -5,30 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mini-Notion</title>
     <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
     <!-- Header -->
-    <div id="div-header">
-      <header>
-        <span class="logotipo">mini-Notion</span>
-        <button
-          id="btnlogin"
-          onclick="
-            document.getElementById('formLogin-Wrapper').style.display = 'block'
-          "
-        >
-          Login
-        </button>
-      </header>
-      <div id="formLogin-Wrapper" style="display: none">
-        <div id="title-form-login">Criar Conta</div>
-        <form id="loginForm">
-          <!-- <input type="text" id="username" placeholder="Usuário" /> -->
-          <input type="email" id="email" placeholder="Email" />
-          <input type="password" id="password" placeholder="Senha" />
-          <button type="submit">Criar Conta</button>
-        </form>
+    <!-- Header -->
+    <div id="global-header">
+      <div class="headerdiv">
+        <div id="logoNote">
+          <img src="./notas.png" alt="" /><span>mini-Notion</span>
+        </div>
+        <div class="darkLight">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
       </div>
     </div>
 
