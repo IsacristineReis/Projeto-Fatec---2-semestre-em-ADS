@@ -13,13 +13,13 @@
   <body>
     <div
       class="backgroundImages fhOXIb"
-      style="background-image: url(&quot;./skyBackground.svg&quot;)"
+      style="background-image: url(./img/skyBackground.svg)"
     ></div>
     <!-- Header -->
     <div id="global-header">
       <div class="headerdiv">
         <div id="logoNote">
-          <img src="./notas.png" alt="" /><span>mini-Notion</span>
+          <img src="./img/notas.png" alt="" /><span>mini-Notion</span>
         </div>
         <div class="darkLight">
           <i class="bx bx-moon moon"></i>
@@ -31,10 +31,17 @@
     <!-- Formulário de login -->
     <div class="loginwrapper">
       <div class="warning">
-        <h1 class="heading">Entre com a sua conta para acessar o bloco de notas</h1>
+        <div id="imageLogin">
+          <img src="./img/star.png" alt="" />
+        </div>
+        <div id="textLogin">
+          <h1 class="heading">
+            Entre com a sua conta para acessar o bloco de notas
+          </h1>
+        </div>
       </div>
       <div class="container">
-        <form class="form" action="" method="post">
+        <form class="form" action="#" method="post">
           <div class="input-field">
             <input
               required=""
@@ -68,13 +75,18 @@
 
           <div class="btn-container">
             <a href="index.html">
-                <button class="btn" >Entrar</button>
+              <button class="btn_formLogin">Criar uma conta</button>
+            </a>
+          </div>
+          <div id="log_in">
+            <p>Já tem uma conta?</p>
+            <a href="">
+              <button class="btn_log_in">Entrar</button>
             </a>
           </div>
         </form>
       </div>
     </div>
-
     <script src="script.js"></script>
   </body>
 </html>

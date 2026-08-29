@@ -38,7 +38,8 @@ body {
   background-color: var(--header);
   height: 100vh;
   transition:
-  background-color 0.3s ease, color 0.3s ease;
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 /* Cada div terá essa configuração (centraliza na página) */
@@ -51,15 +52,15 @@ body {
   /* background-repeat: no-repeat;
   background-size: cover;
   height: 100vh; */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1;
 }
 
 /* ======================================================================== */
@@ -100,6 +101,7 @@ body {
   font-weight: 600;
   color: #ffffff;
 }
+
 /*botões*/
 .darkLight {
   display: flex;
@@ -350,29 +352,46 @@ li {
 
 /* Texto de aviso acima do formulário */
 .loginwrapper {
-    position: relative;
-    z-index: 1;
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
 .warning {
   max-width: 400px;
-  text-align: center;
+  display: flex;
   margin-bottom: 24px;
+  gap: 25px;
 }
-
 .warning .heading {
-  color: #ffffff;
-  font-size: 1.4rem;
+  color: var(--bg-color);
+  font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.4;
 }
-
+#imageLogin {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#imageLogin img {
+  height: 100px;
+  width: 100px;
+}
+#textLogin {
+  height: 150px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* Container do formulário */
 .container {
   background-color: #ffffff;
@@ -384,68 +403,87 @@ li {
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
 /* Campos com label flutuante */
 .input-field {
-    position: relative;
+  position: relative;
 }
-
 .input-field input {
-    width: 100%;
-    padding: 12px 10px;
-    font-size: 1rem;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    outline: none;
-    background: transparent;
-    color: #1a1a1a;
-    transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  background: transparent;
+  color: #1a1a1a;
+  transition: border-color 0.3s ease;
 }
-
 .input-field label {
-    position: absolute;
-    left: 10px;
-    top: 12px;
-    font-size: 1rem;
-    color: #888;
-    pointer-events: none;
-    transition: all 0.2s ease;
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-size: 1rem;
+  color: #888;
+  pointer-events: none;
+  transition: all 0.2s ease;
 }
-
 .input-field input:focus,
 .input-field input:valid {
-    border-bottom-color: #2d8cf0;
+  border-bottom-color: var(--header-bg);
 }
-
 .input-field input:focus ~ label,
 .input-field input:valid ~ label {
-    top: -14px;
-    font-size: 0.75rem;
-    color: #2d8cf0;
+  top: -14px;
+  font-size: 0.75rem;
+  color: #2d8cf0;
 }
-
-
-.btn {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    background-color: #2d8cf0;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
+.btn_formLogin {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1.5px solid var(--text-color);
+  background-color: #2d8cf0;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
-
-.btn:hover {
-    background-color: #1e6fc9;
+.btn_formLogin:hover {
+  width: 101%;
+  box-shadow: 5px 5px 0px var(--ink);
 }
-
+/* Entrar na conta */
+#log_in {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+#log_in p {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+.btn_log_in {
+  font-size: .9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--header-bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: var(--bg-color);
+  border: none;
+}
+.btn_log_in:hover{
+  font-size: 1rem;
+}
 /* ======================================================================== */
 /*Footer*/
 #footer {
