@@ -1,24 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
 :root {
   /* Color Palette */
   --ink: #323232;
   --paper-front: #fff9e6;
   --bg-color: #ffffff;
+  --white-black: #fff;
   --primary-btn: #ff6b6b;
   --primary-btn-hover: #ff5252;
   --switch-bg: #ffe66d;
-  --input-focus: #2d8cf0;
+  --switch-bg2: #f8df51;
   --background: #9b897d;
-  --header: #b8c3c8;
   --text: #252525;
   --link: #eeeeee;
   --text-color: #1a1a1a;
   --header-bg: #2d8cf0;
+  --div-bg: #51a5ff;
   --icon-color: #ffffff;
 }
 body.dark-mode {
-  --bg-color: #1a1a1a;
+  --white-black: #1a1a1a;
   --text-color: #f0f0f0;
   --header-bg: #1c1c1c;
   --icon-color: #f0f0f0;
@@ -35,7 +37,7 @@ body.dark-mode {
 }
 body {
   font-family: "Comic Sans MS", "Chalkboard SE", "Marker Felt", "Gochi Hand";
-  background-color: var(--header);
+  background-color: var(--header-bg);
   height: 100vh;
   transition:
     background-color 0.3s ease,
@@ -49,9 +51,6 @@ body {
 }
 
 .fhOXIb {
-  /* background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh; */
   position: fixed;
   top: 0;
   left: 0;
@@ -72,7 +71,7 @@ body {
   height: 70px;
   width: 100%;
   transition: background-color 0.3s ease;
-  background-color: var(--header-bg);
+  background-color: var( --header-bg);
   z-index: 100;
 }
 .headerdiv {
@@ -101,7 +100,6 @@ body {
   font-weight: 600;
   color: #ffffff;
 }
-
 /*botões*/
 .darkLight {
   display: flex;
@@ -133,6 +131,45 @@ body.dark-mode .darkLight .sun {
 body.dark-mode .darkLight .moon {
   display: none;
 }
+/* ======================================================================== */
+/* HEADER MAIN PAGE */
+#Main-page {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 24px 60px;
+    text-align: center;
+}
+#title-page {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--bg-color);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+#subtitle-page {
+    font-size: 1.4rem;
+    color: var(--bg-color);
+    line-height: 1.6;
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+#subtitle-page span {
+    color: var(--switch-bg);
+    font-weight: 600;
+}
+
+@media (max-width: 600px) {
+    #title-page {
+        font-size: 1.8rem;
+    }
+
+    #subtitle-page {
+        font-size: 1rem;
+    }
+}
 
 /* ======================================================================== */
 /*Bloco de Anotação*/
@@ -156,20 +193,14 @@ body.dark-mode .darkLight .moon {
   --sketch-radius-2: 24px 8px 24px 8px / 8px 24px 8px 24px;
   --sketch-radius-btn: 16px 5px 16px 5px / 5px 16px 5px 16px;
 
-  /* display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  box-sizing: border-box;
-  margin-top: 6rem; */
-  margin: 10rem auto;
+  margin: 4.2rem auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
 }
+
 .doodle-switch-label:active {
   transform: translate(2px, 2px);
   box-shadow: 0px 0px 0px var(--ink);
@@ -348,65 +379,6 @@ li {
 }
 
 /* ======================================================================== */
-/*Formulário do Login*/
-
-/* Texto de aviso acima do formulário */
-.loginwrapper {
-  position: relative;
-  z-index: 1;
-  min-height: 100vh;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-.warning {
-  max-width: 400px;
-  display: flex;
-  margin-bottom: 24px;
-  gap: 25px;
-}
-.warning .heading {
-  color: var(--bg-color);
-  font-size: 1.2rem;
-  font-weight: 600;
-  line-height: 1.4;
-}
-#imageLogin {
-  height: 150px;
-  width: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#imageLogin img {
-  height: 100px;
-  width: 100px;
-}
-#textLogin {
-  height: 150px;
-  width: 220px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-/* Container do formulário */
-.container {
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 380px;
-  padding: 40px 32px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
 
 /* Campos com label flutuante */
 .input-field {
@@ -472,7 +444,7 @@ li {
   font-weight: 400;
 }
 .btn_log_in {
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
   color: var(--header-bg);
@@ -481,16 +453,189 @@ li {
   background-color: var(--bg-color);
   border: none;
 }
-.btn_log_in:hover{
+.btn_log_in:hover {
   font-size: 1rem;
 }
+/* ======================================================================== */
+
+/* Botão */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--switch-bg);
+  color: #ffffff;
+  font-size: 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+  z-index: 999;
+}
+.floating-btn:hover {
+  background-color: var(--switch-bg2);
+  transform: scale(1.08);
+}
+/* ===== Overlay (fundo escurecido) ===== */
+.weather-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease;
+  z-index: 1000;
+}
+.weather-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Modal ===== */
+.weather-modal {
+  position: relative;
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 380px;
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  transform: scale(0.9);
+  transition: transform 0.25s ease;
+}
+
+.weather-overlay.active .weather-modal {
+  transform: scale(1);
+}
+.weather-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.weather-close:hover {
+  color: #1a1a1a;
+}
+
+.weather-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+}
+/* ===== Formulário de busca ===== */
+.weather-search {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.weather-search input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.weather-search input:focus {
+  border-color: #2d8cf0;
+}
+.weather-search-btn {
+  width: 42px;
+  border: none;
+  border-radius: 8px;
+  background-color: #2d8cf0;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.weather-search-btn:hover {
+  background-color: #1e6fc9;
+}
+/* ===== Resultado ===== */
+.weather-result {
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.weather-placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.weather-city {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+.weather-icon {
+  width: 64px;
+  height: 64px;
+}
+
+.weather-temp {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d8cf0;
+  margin: 4px 0;
+}
+
+.weather-desc {
+  color: #555;
+  text-transform: capitalize;
+  margin-bottom: 8px;
+}
+
+.weather-details {
+  display: flex;
+  gap: 16px;
+  font-size: 0.85rem;
+  color: #777;
+}
+.weather-error {
+  color: #e04b4b;
+  font-size: 0.9rem;
+}
+
+/* ======================================================================== */
+
 /* ======================================================================== */
 /*Footer*/
 #footer {
   text-align: center;
   padding: 20px;
-  background-color: var(--header);
-  color: var(--text);
+  background-color: var(--header-bg);
+  color: var(--bg-color);
   font-size: 14px;
   position: fixed;
   bottom: 0;
@@ -500,6 +645,64 @@ li {
   margin: 0;
 }
 
-/* ===================================================== */
+/* ================================== TELA DE LOGIN ================================== */
 
-/*========*/
+/*Formulário do Login*/
+
+/* Texto de aviso acima do formulário */
+.loginwrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.warning {
+  max-width: 400px;
+  display: flex;
+  margin-bottom: 24px;
+  gap: 25px;
+}
+.warning .heading {
+  color: var(--bg-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  font-family: "Pixelify Sans", sans-serif;
+}
+#imageLogin {
+  height: 150px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#imageLogin img {
+  height: 100px;
+  width: 100px;
+}
+#textLogin {
+  height: 150px;
+  width: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Container do formulário */
+.container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 380px;
+  padding: 40px 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}

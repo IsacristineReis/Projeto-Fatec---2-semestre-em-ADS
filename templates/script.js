@@ -113,3 +113,71 @@ const darkLightBtn = document.querySelector('.darkLight');
 darkLightBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
+
+
+
+// === API DO CLIMA == //
+document.addEventListener("DOMContentLoaded", () => {
+    const API_KEY = "d1152b4d99c4edc0bc1e545ecb55cecf";
+
+    const openBtn = document.getElementById("openWeatherBtn");
+    const closeBtn = document.getElementById("closeWeather");
+    const overlay = document.getElementById("weatherOverlay");
+    const form = document.getElementById("weatherForm");
+    const cityInput = document.getElementById("cityInput");
+    const resultBox = document.getElementById("weatherResult");
+
+    openBtn.addEventListener("click", () => {
+        overlay.classList.add("active");
+        cityInput.focus();
+    });
+
+    closeBtn.addEventListener("click", () => {
+        overlay.classList.remove("active");
+    });
+
+    overlay.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            overlay.classList.remove("active");
+        }
+    });
+
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const city = cityInput.value.trim();
+        if (!city) return;
+
+        resultBox.innerHTML = `<p class="weather-placeholder">Buscando...</p>`;
+
+        try {
+            const response = await fetch(
+                `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${API_KEY}&units=metric&lang=pt_br`
+            );
+
+            if (!response.ok) throw new Error("Local não encontrado");
+
+            const data = await response.json();
+            renderWeather(data);
+        } catch (error) {
+            resultBox.innerHTML = `<p class="weather-error">Não foi possível encontrar "${city}". Verifique o nome e tente novamente.</p>`;
+        }
+    });
+
+    function renderWeather(data) {
+        const { name, sys, main, weather, wind } = data;
+        const icon = weather[0].icon;
+        const description = weather[0].description;
+
+        resultBox.innerHTML = `
+            <p class="weather-city">${name}, ${sys.country}</p>
+            <img class="weather-icon" src="https://openweathermap.org/img/wn/${icon}@2x.png" alt="${description}" />
+            <p class="weather-temp">${Math.round(main.temp)}°C</p>
+            <p class="weather-desc">${description}</p>
+            <div class="weather-details">
+                <span>Sensação: ${Math.round(main.feels_like)}°C</span>
+                <span>Umidade: ${main.humidity}%</span>
+                <span>Vento: ${wind.speed} m/s</span>
+            </div>
+        `;
+    }
+});

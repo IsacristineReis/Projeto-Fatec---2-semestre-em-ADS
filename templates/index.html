@@ -17,15 +17,20 @@
     <div id="global-header">
       <div class="headerdiv">
         <div id="logoNote">
-          <img src="./notas.png" alt="" /><span>mini-Notion</span>
+          <img src="./img/notas.png" alt="" /><span>mini-Notion</span>
         </div>
+        <div id="userName" style="background-color: aquamarine"></div>
         <div class="darkLight">
           <i class="bx bx-moon moon"></i>
           <i class="bx bx-sun sun"></i>
         </div>
       </div>
     </div>
-
+    <!-- HEADER PAGE -->
+    <div id="Main-page">
+      <div id="title-page">Faça sua anotações</div>
+      <div id="subtitle-page">No <span>mini-Notion</span> você pode fazer suas anotações. Além disso, você pode verificar o clima da cidade de sua escolha </div>
+    </div>
     <!-- Criar uma anotação {Titulo, Conteúdo, adicionar nota} lista deletar e editar-->
     <!-- From Uiverse.io by mamyapro123 -->
     <div class="doodle-wrapper">
@@ -71,6 +76,42 @@
         </div>
       </div>
     </div>
+
+    <!-- Botão Flutuande -->
+    <button class="floating-btn" id="openWeatherBtn">
+      <i class="bx bx-cloud-sun" />
+    </button>
+
+    <!-- Modal do clima -->
+    <div class="weather-overlay" id="weatherOverlay">
+      <div class="weather-modal">
+        <button class="weather-close" id="closeWeather">
+          <i class="bx bx-x"></i>
+        </button>
+
+        <h2 class="weather-title">Consultar clima</h2>
+
+        <form class="weather-search" id="weatherForm">
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Digite uma cidade..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="weather-search-btn">
+            <i class="bx bx-search"></i>
+          </button>
+        </form>
+
+        <div class="weather-result" id="weatherResult">
+          <p class="weather-placeholder">
+            Digite o nome de um local para ver o clima.
+          </p>
+        </div>
+      </div>
+    </div>
+
     <!-- ==== FIM DO FORMULÀRIO ==== -->
 
     <!-- Footer -->
