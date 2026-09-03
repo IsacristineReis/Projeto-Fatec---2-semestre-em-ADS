@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mini-Notion</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <!-- Header -->
+    <div id="global-header">
+      <div class="headerdiv">
+        <div id="logoNote">
+          <a href="./index.html" style="text-decoration: none; color: inherit">
+            <img src="./img/notas.png" alt="logo da marca" /><span>mini-Notion</span>
+          </a>
+        </div>
+        <div id="userName" style="background-color: aquamarine"></div>
+        <div class="darkLight">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+      </div>
+    </div>
+    <!-- HEADER PAGE -->
+    <div id="Main-page">
+      <div id="title-page">Faça sua anotações</div>
+      <div id="subtitle-page">
+        No <span>mini-Notion</span> você pode fazer suas anotações. Além disso,
+        você pode verificar o clima da cidade de sua escolha
+      </div>
+    </div>
+    <!-- Criar uma anotação {Titulo, Conteúdo, adicionar nota} lista deletar e editar-->
+    <!-- From Uiverse.io by mamyapro123 -->
+    <div class="doodle-wrapper">
+      <!-- CARD NUMBER 1 -->
+      <div class="doodle-card-scene">
+        <div class="doodle-card-inner">
+          <div class="doodle-card-front">
+            <div class="doodle-title">Bloco de notas</div>
+            <form id="form-nota" action="#" method="post">
+              <div class="doodle-input-wrapper">
+                <input type="hidden" id="nota-id" />
+                <input
+                  class="doodle-input"
+                  id="titulo-form"
+                  name="titulo"
+                  placeholder="Título"
+                  onfocus="this.placeholder = 'Título'"
+                  type="text"
+                />
+              </div>
+              <div class="doodle-input-wrapper">
+                <textarea
+                  class="doodle-input"
+                  id="conteudo-form"
+                  name="conteudo"
+                  placeholder="Conteúdo"
+                  onfocus="this.placeholder = 'Conteúdo'"
+                ></textarea>
+              </div>
+              <button class="doodle-btn" type="submit" onclick="temp()">
+                Salvar nota
+              </button>
+
+              <hr />
+
+              <div>
+                <ul id="lista-notas">
+                  <!-- JavaScript irá preencher com <li> -->
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botão Flutuande -->
+    <button class="floating-btn" id="openWeatherBtn">
+      <i class="bx bx-cloud-sun"></i>
+    </button>
+
+    <!-- Modal do clima -->
+    <div class="weather-overlay" id="weatherOverlay">
+      <div class="weather-modal">
+        <button class="weather-close" id="closeWeather">
+          <i class="bx bx-x"></i>
+        </button>
+
+        <h2 class="weather-title">Consultar clima</h2>
+
+        <form class="weather-search" id="weatherForm">
+          <input
+            type="text"
+            id="cityInput"
+            placeholder="Digite uma cidade..."
+            autocomplete="off"
+            required
+          />
+          <button type="submit" class="weather-search-btn">
+            <i class="bx bx-search"></i>
+          </button>
+        </form>
+
+        <div class="weather-result" id="weatherResult">
+          <p class="weather-placeholder">
+            Digite o nome de um local para ver o clima.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==== FIM DO FORMULÀRIO ==== -->
+
+    <!-- Footer -->
+    <footer id="footer">
+      <p>&copy; 2026 mini-Notion. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

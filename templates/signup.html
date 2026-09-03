@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tela de criar conta</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div
+      class="backgroundImages fhOXIb"
+      style="background-image: url(./img/skyBackground.svg)"
+    ></div>
+    <!-- Header -->
+    <div id="global-header">
+      <div class="headerdiv">
+        <div id="logoNote">
+          <a href="./signup.html" style="text-decoration: none; color: inherit">
+            <img src="./img/notas.png" alt="logo da marca" /><span>mini-Notion</span>
+          </a>
+        </div>
+        <div class="darkLight">
+          <i class="bx bx-moon moon"></i>
+          <i class="bx bx-sun sun"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- Formulário de login -->
+    <div class="loginwrapper">
+      <div class="warning">
+        <div id="imageLogin">
+          <img src="./img/star.png" alt="" />
+        </div>
+        <div id="textLogin">
+          <h1 class="heading">
+            Entre com a sua conta para acessar o bloco de notas
+          </h1>
+        </div>
+      </div>
+      <div class="container">
+        <form class="form" action="#" method="post" id="signUp">
+          <div class="input-field">
+            <input
+              required
+              autocomplete="off"
+              type="text"
+              name="text"
+              id="username"
+            />
+            <label for="username">Nome</label>
+          </div>
+          <div class="input-field">
+            <input
+              required
+              autocomplete="off"
+              type="email"
+              name="email"
+              id="email"
+            />
+            <label for="email">E-mail</label>
+          </div>
+          <div class="input-field">
+            <input
+              required
+              autocomplete="off"
+              type="password"
+              name="password"
+              id="password"
+            />
+            <label for="password">Senha</label>
+          </div>
+          <div class="btn-container">
+            <a href="index.html">
+              <button class="btn_formLogin">Criar uma conta</button>
+            </a>
+          </div>
+        </form>
+        <div id="log_in">
+          <p>Já tem uma conta?</p>
+          <a href="./login.html">
+            <button class="btn_log_in" id="btn-login">Entrar</button>
+          </a>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
