@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/notas";
+const API_URL = "http://127.0.0.1:5500/templates/index.html";
 
 const form = document.getElementById("form-nota");
 const inputId = document.getElementById("nota-id");
@@ -101,11 +101,77 @@ function temp() {
   }, 2000);
 }
 
-// === fomulário de login === /
+// === fomulário de login === //
 
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("signUp");
+    const usernameInput = document.getElementById("username");
+    const emailInput = document.getElementById("email");
+    const passwordInput = document.getElementById("password");
+    const formMessage = document.getElementById("formMessage");
 
+    form.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
+        const username = usernameInput.value.trim();
+        const email = emailInput.value.trim();
+        const password = passwordInput.value;
 
+        // Validação simples antes de enviar
+        if (username === "" || email === "" || password === "") {
+            showMessage("Preencha todos os campos.", "error");
+            return;
+        }
+
+        if (password.length < 6) {
+            showMessage("A senha precisa ter pelo menos 6 caracteres.", "error");
+            return;
+        }
+
+        const submitBtn = form.querySelector(".btn_formLogin");
+        submitBtn.disabled = true;
+        submitBtn.textContent = "Criando conta...";
+
+        try {
+            // Endpoint que você vai criar no Flask (ex: @app.route("/signup", methods=["POST"]))
+            const response = await fetch("/signup", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ username, email, password })
+            });
+
+            const data = await response.json();
+
+            if (!response.ok) {
+                // Ex: e-mail já cadastrado, erro de validação no backend
+                showMessage(data.message || "Erro ao criar conta. Tente novamente.", "error");
+                return;
+            }
+
+            showMessage("Conta criada com sucesso! Redirecionando...", "success");
+
+            // Redireciona para a página principal depois de confirmar o cadastro
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1200);
+
+        } catch (error) {
+            showMessage("Não foi possível conectar ao servidor. Tente novamente.", "error");
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Criar uma conta";
+        }
+    });
+
+    function showMessage(text, type) {
+        formMessage.textContent = text;
+        formMessage.className = `form-message ${type}`;
+    }
+});
+
+// === end === //
 
 // === Botão dark e light ===
 const darkLightBtn = document.querySelector('.darkLight');

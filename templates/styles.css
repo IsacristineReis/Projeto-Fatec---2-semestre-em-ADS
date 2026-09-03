@@ -85,7 +85,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-#logoNote {
+#logoNote a{
   display: flex;
   align-items: center;
   gap: 10px;
@@ -96,9 +96,10 @@ body {
   object-fit: contain;
 }
 #logoNote span {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #ffffff;
+  font-family: "Pixelify Sans", sans-serif;
 }
 /*botões*/
 .darkLight {
@@ -380,82 +381,6 @@ li {
 
 /* ======================================================================== */
 
-/* Campos com label flutuante */
-.input-field {
-  position: relative;
-}
-.input-field input {
-  width: 100%;
-  padding: 12px 10px;
-  font-size: 1rem;
-  border: none;
-  border-bottom: 2px solid #ccc;
-  outline: none;
-  background: transparent;
-  color: #1a1a1a;
-  transition: border-color 0.3s ease;
-}
-.input-field label {
-  position: absolute;
-  left: 10px;
-  top: 12px;
-  font-size: 1rem;
-  color: #888;
-  pointer-events: none;
-  transition: all 0.2s ease;
-}
-.input-field input:focus,
-.input-field input:valid {
-  border-bottom-color: var(--header-bg);
-}
-.input-field input:focus ~ label,
-.input-field input:valid ~ label {
-  top: -14px;
-  font-size: 0.75rem;
-  color: #2d8cf0;
-}
-.btn_formLogin {
-  width: 100%;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1.5px solid var(--text-color);
-  background-color: #2d8cf0;
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-.btn_formLogin:hover {
-  width: 101%;
-  box-shadow: 5px 5px 0px var(--ink);
-}
-/* Entrar na conta */
-#log_in {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  justify-content: center;
-}
-#log_in p {
-  text-decoration: none;
-  font-size: 0.9rem;
-  color: var(--text-color);
-  font-weight: 400;
-}
-.btn_log_in {
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: var(--header-bg);
-  cursor: pointer;
-  transition: all 0.15s ease;
-  background-color: var(--bg-color);
-  border: none;
-}
-.btn_log_in:hover {
-  font-size: 1rem;
-}
 /* ======================================================================== */
 
 /* Botão */
@@ -634,10 +559,8 @@ li {
 #footer {
   text-align: center;
   padding: 20px;
-  background-color: var(--header-bg);
   color: var(--bg-color);
   font-size: 14px;
-  position: fixed;
   bottom: 0;
   width: 100%;
 }
@@ -672,7 +595,10 @@ li {
   font-size: 1.2rem;
   font-weight: 600;
   line-height: 1.4;
-  font-family: "Pixelify Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.1);
+  /* font-family: "Pixelify Sans", sans-serif; */
 }
 #imageLogin {
   height: 150px;
@@ -694,15 +620,110 @@ li {
 }
 /* Container do formulário */
 .container {
-  background-color: #ffffff;
+  background-color: var(--paper-front);
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   padding: 40px 32px;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  border: var(--border-width) solid var(--ink);
+  border-radius: var(--sketch-radius-1);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0px var(--ink);
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
 }
 .form {
   display: flex;
   flex-direction: column;
   gap: 24px;
+}
+/* Campos com label flutuante */
+.input-field {
+  position: relative;
+}
+.input-field input {
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 2px solid #666;
+  outline: none;
+  background: transparent;
+  color: #1a1a1a;
+  transition: border-color 0.3s ease;
+}
+.input-field label {
+  position: absolute;
+  left: 10px;
+  top: 12px;
+  font-size: 1rem;
+  color: #666;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+.input-field input:focus,
+.input-field input:valid {
+  border-bottom-color: var(--text);
+}
+.input-field input:focus ~ label,
+.input-field input:valid ~ label {
+  top: -14px;
+  font-size: 0.75rem;
+  color: var(--text);
+}
+.form-message {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 12px;
+    min-height: 20px;
+}
+.form-message.error {
+    color: #e04b4b;
+}
+.form-message.success {
+    color: #2ecc71;
+}
+.btn_formLogin {
+  width: 55%;
+  height: 40px;
+  margin-left: 4.5rem;
+  border-radius: 6px;
+  border: 1.5px solid var(--ink);
+  background-color: var(--primary-btn);
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.btn_formLogin:hover {
+  box-shadow: 4px 4px .5px var(--ink);
+  background-color: var(--primary-btn-hover);
+}
+/* Entrar na conta */
+#log_in {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+#log_in p {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: var(--text-color);
+  font-weight: 400;
+}
+.btn_log_in {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--header-bg);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  background-color: var(--bg-color);
+  border: none;
+}
+.btn_log_in:hover {
+  font-weight: 800;
+  text-decoration: underline;
 }
