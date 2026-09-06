@@ -284,8 +284,8 @@ function renderizarNotas(notas) {
     li.innerHTML = `
       <strong>${nota.titulo}</strong>
       <p>${nota.conteudo ?? ""}</p>
-      <button type="button" onclick="preencherFormulario(${nota.id}, '${escapeAttr(nota.titulo)}', '${escapeAttr(nota.conteudo ?? "")}')">Editar</button>
-      <button type="button" onclick="excluirNota(${nota.id})">Excluir</button>
+      <button class="edit-btn" type="button" onclick="preencherFormulario(${nota.id}, '${escapeAttr(nota.titulo)}', '${escapeAttr(nota.conteudo ?? "")}')">Editar</button>
+      <button class="delete-btn" type="button" onclick="excluirNota(${nota.id})">Excluir</button>
     `;
 
     listaNotas.appendChild(li);

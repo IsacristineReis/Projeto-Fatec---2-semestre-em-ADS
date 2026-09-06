@@ -4,7 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>mini-Notion</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
     <link
       href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css"
       rel="stylesheet"
@@ -17,11 +20,17 @@
     <div id="global-header">
       <div class="headerdiv">
         <div id="logoNote">
-          <a href="{{ url_for('index_page') }}" style="text-decoration: none; color: inherit">
-            <img src="{{ url_for('static', filename='img/notas.png') }}" alt="logo da marca" /><span>mini-Notion</span>
+          <a
+            href="{{ url_for('index_page') }}"
+            style="text-decoration: none; color: inherit"
+          >
+            <img
+              src="{{ url_for('static', filename='img/notas.png') }}"
+              alt="logo da marca"
+            /><span>mini-Notion</span>
           </a>
         </div>
-        <div id="userName"></div>
+        <div id="userName" class="username_header"></div>
         <button id="logoutBtn" class="btn_log_in" type="button">Sair</button>
         <div class="darkLight">
           <i class="bx bx-moon moon"></i>
@@ -40,46 +49,41 @@
     <!-- Criar uma anotação {Titulo, Conteúdo, adicionar nota} lista deletar e editar-->
     <!-- From Uiverse.io by mamyapro123 -->
     <div class="doodle-wrapper">
-      <!-- CARD NUMBER 1 -->
-      <div class="doodle-card-scene">
-        <div class="doodle-card-inner">
-          <div class="doodle-card-front">
-            <div class="doodle-title">Bloco de notas</div>
-            <form id="form-nota" action="#" method="post">
-              <div class="doodle-input-wrapper">
-                <input type="hidden" id="nota-id" />
-                <input
-                  class="doodle-input"
-                  id="titulo-form"
-                  name="titulo"
-                  placeholder="Título"
-                  onfocus="this.placeholder = 'Título'"
-                  type="text"
-                />
-              </div>
-              <div class="doodle-input-wrapper">
-                <textarea
-                  class="doodle-input"
-                  id="conteudo-form"
-                  name="conteudo"
-                  placeholder="Conteúdo"
-                  onfocus="this.placeholder = 'Conteúdo'"
-                ></textarea>
-              </div>
-              <button class="doodle-btn" type="submit" onclick="temp()">
-                Salvar nota
-              </button>
-
-              <hr />
-
-              <div>
-                <ul id="lista-notas">
-                  <!-- JavaScript irá preencher com <li> -->
-                </ul>
-              </div>
-            </form>
+      <div class="doodle-card-front">
+        <div class="doodle-title">Bloco de notas</div>
+        <form id="form-nota" action="#" method="post">
+          <div class="doodle-input-wrapper">
+            <input type="hidden" id="nota-id" />
+            <input
+              class="doodle-input"
+              id="titulo-form"
+              name="titulo"
+              placeholder="Título"
+              onfocus="this.placeholder = 'Título'"
+              type="text"
+            />
           </div>
-        </div>
+          <div class="doodle-input-wrapper">
+            <textarea
+              class="doodle-input"
+              id="conteudo-form"
+              name="conteudo"
+              placeholder="Conteúdo"
+              onfocus="this.placeholder = 'Conteúdo'"
+            ></textarea>
+          </div>
+          <button class="doodle-btn" type="submit" onclick="temp()">
+            Salvar nota
+          </button>
+
+          <hr />
+
+          <div>
+            <ul id="lista-notas" class="lista_notas_excluir_editar">
+              <!-- JavaScript irá preencher com <li> -->
+            </ul>
+          </div>
+        </form>
       </div>
     </div>
 
