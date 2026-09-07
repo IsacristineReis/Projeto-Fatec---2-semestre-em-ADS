@@ -157,7 +157,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       salvarSessao(dadosLogin);
-      showMessage(formMessage, "Conta criada com sucesso! Redirecionando...", "success");
+      showMessage(formMessage, "Conta criada com sucesso!", "success");
       setTimeout(() => {
         window.location.href = "/index.html";
       }, 800);
