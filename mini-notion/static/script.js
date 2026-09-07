@@ -273,6 +273,9 @@ async function excluirNota(id) {
 
 // ----- FUNÇÕES DE INTERFACE -----
 
+//Teste ele fica abaixo do : <strong>${nota.titulo}</strong>
+//<p>${nota.conteudo ?? ""}</p>
+
 function renderizarNotas(notas) {
   const listaNotas = document.getElementById("lista-notas");
   if (!listaNotas) return;
@@ -283,8 +286,7 @@ function renderizarNotas(notas) {
 
     li.innerHTML = `
       <strong>${nota.titulo}</strong>
-      <p>${nota.conteudo ?? ""}</p>
-      <button class="edit-btn" type="button" onclick="preencherFormulario(${nota.id}, '${escapeAttr(nota.titulo)}', '${escapeAttr(nota.conteudo ?? "")}')">Editar</button>
+      <button class="edit-btn" type="button" onclick="preencherFormulario(${nota.id}, '${escapeAttr(nota.titulo)}', '${escapeAttr(nota.conteudo ?? "")}')">Examinar</button>
       <button class="delete-btn" type="button" onclick="excluirNota(${nota.id})">Excluir</button>
     `;
 

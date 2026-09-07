@@ -45,7 +45,17 @@ body {
     background-color 0.3s ease,
     color 0.3s ease;
 }
-
+/* Barra de rolagem */
+::-webkit-scrollbar{
+  width: 5px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--text);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track{
+  background-color: var(--header-bg);
+}
 /* Cada div terá essa configuração (centraliza na página) */
 .interface {
   max-width: 1280px;
@@ -214,7 +224,7 @@ body.dark-mode .darkLight .moon {
 /* Card Inner & Faces */
 
 .doodle-card-front {
-  max-width: 50rem;
+  width: 35rem;
   min-height: 150%;
   backface-visibility: hidden;
   display: flex;
@@ -235,6 +245,13 @@ body.dark-mode .darkLight .moon {
   );
   background-position: 0 15px;
 }
+
+@media (max-width: 768px) {
+  .doodle-card-front{
+    width: 29.6rem;
+  }
+}
+
 .doodle-card-front {
   background-color: var(--paper-front);
 }
