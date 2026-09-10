@@ -1,14 +1,14 @@
 {
   "builds": [
     {
-      "src": "app.py",
+      "src": "mini-notion/app.py",
       "use": "@vercel/python"
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "app.py"
+      "dest": "mini-notion/app.py"
     }
   ]
 }
