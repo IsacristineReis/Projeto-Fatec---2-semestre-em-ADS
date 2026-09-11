@@ -63,4 +63,4 @@ python main.py
 
 ## Status do projeto
 
-🚧 Em desenvolvimento — fase de planejamento e configuração inicial concluída.
+🎉 Finalizado.
